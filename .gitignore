@@ -12,3 +12,9 @@ out/
 .idea/
 .vscode/
 *.swp
+
+# Operator daemon
+operator/__pycache__/
+operator/daemon_state.db
+*venv/
+.env.operator

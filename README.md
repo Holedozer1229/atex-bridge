@@ -45,3 +45,11 @@ Sample rates: S=0 → 1.0 · S=1M → 0.5906 · S≈6.4M → 0.3332 · S=147M �
   callee is our own non-reentrant token.
 - `missing-events-access-control` on `renounceOwnership` is a false positive:
   `OwnershipTransferred` is emitted in the same call.
+
+## Operator daemon (`operator/`)
+
+Off-chain bridge operator: watches the Excalibur chain, Bitcoin (BRC-20
+indexer), and the `SkyntBurned` event; inscribes ATEX transfers (Taproot
+commit-reveal, ordinals envelope) and calls `lockAtex`. All secrets via
+environment/files; idempotent via sqlite state; 34-test suite
+(`test_operator.py`). Runbook: `operator/OPERATOR.md`.
